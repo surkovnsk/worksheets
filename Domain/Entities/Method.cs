@@ -12,6 +12,9 @@ namespace Domain.Entities
     public class Method
         :Base.BaseDBEntity
     {
-        public FormulaTemplate FormulaTemplate { get; set; }
+        public int? FormulatemplateId { get; set; }
+
+        [ForeignKey("FormulatemplateId")]
+        public virtual FormulaTemplate FormulaTemplate { get; set; }
     }
 }

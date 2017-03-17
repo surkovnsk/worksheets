@@ -10,13 +10,23 @@ namespace Domain.Entities
 {
     public class Measurement
     {
-
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public ICollection<Variable> ListOfVariables { get; set; }
+        [Required]
+        public int MethodId { get; set; }
+
+        [Required]
+        public int ChemicalAgentId { get; set; }
+
+        public virtual ICollection<Variable> ListOfVariables { get; set; }
         public float Result { get; set; }
-        public Method Method { get; set; }
-        public ChemicalAgent ChemicalAgent { get; set; }
+
+        [ForeignKey("MethodId")]
+        public virtual Method Method { get; set; }
+
+        [ForeignKey("ChemicalAgentId")]
+        public virtual ChemicalAgent ChemicalAgent { get; set; }
 
     }
 }

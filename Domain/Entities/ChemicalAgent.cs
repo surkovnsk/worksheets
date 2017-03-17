@@ -13,5 +13,7 @@ namespace Domain.Entities
         Base.BaseDBEntity
     {
         public string NcasCode { get; set; }
+
+        public virtual ICollection<Method> Methods { get; set; }
     }
 }

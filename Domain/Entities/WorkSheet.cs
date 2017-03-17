@@ -12,9 +12,13 @@ namespace Domain.Entities
     public class WorkSheet
         :Base.BaseDBEntity
     {
-        public FormulaTemplate FormulaTemplate { get; set; }
+        
+        public int? FormulaTemplateId { get; set; }
+
+        [ForeignKey("FormulaTemplateId")]
+        public virtual FormulaTemplate FormulaTemplate { get; set; }
         public DateTimeOffset CreationDate { get; set; }
-        public ICollection<Measurement> ListOfMeasurements { get; set; }
+        public virtual ICollection<Measurement> ListOfMeasurements { get; set; }
 
 
     }

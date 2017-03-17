@@ -15,6 +15,7 @@ namespace Domain.Entities.Base
 
         [Column(TypeName = "varchar")]
         [StringLength(1024)]
+        [Required]
         public string Name { get; set; }
     }
 }

@@ -16,9 +16,13 @@ namespace Domain.Entities
         [StringLength(2)]
         public string Code { get; set; }
 
+        public int? FormulaId { get; set; }
+
         [Column(TypeName = "varchar")]
         [StringLength(1024)]
         public string Description { get; set; }
-        public FormulaTemplate Formula { get; set; }
+
+        [ForeignKey("FormulaId")]
+        public virtual FormulaTemplate Formula { get; set; }
     }
 }

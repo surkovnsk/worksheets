@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Domain.Entities;
+using DataAccess.Initializer;
 
 namespace DataAccess.Context
 {
@@ -13,7 +14,7 @@ namespace DataAccess.Context
     {
         public WorkSheetsDbContext():base("LocalDBConnection")
         {
-
+            Database.SetInitializer(new DbContextInitializer());
         }
         public virtual DbSet<ChemicalAgent> ChemicalAgents { get; set; }
         public virtual DbSet<FormulaTemplate> FormulaTemplates { get; set; }
