@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace Domain.Entities
 {
     [Table("Variables")]
     public class Variable
-        :Base.BaseDBEntity
+        :BaseDBEntity
     {
         [Column(TypeName = "varchar")]
         [StringLength(2)]

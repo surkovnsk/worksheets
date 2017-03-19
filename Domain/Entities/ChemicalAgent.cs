@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Entities.Base;
 
 namespace Domain.Entities
 {
     [Table("ChemicalAgents")]
    public class ChemicalAgent:
-        Base.BaseDBEntity
+        BaseDBEntity
     {
         public string NcasCode { get; set; }
 
