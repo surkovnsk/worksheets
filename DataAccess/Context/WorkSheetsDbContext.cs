@@ -21,5 +21,6 @@ namespace DataAccess.Context
         public virtual DbSet<WorkSheet> WorkSheets { get; set; }
         public virtual DbSet<Method> Methods { get; set; }
         public virtual DbSet<Variable> Variables { get; set; }
+
     }
 }
